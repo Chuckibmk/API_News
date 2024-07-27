@@ -3,3 +3,5 @@
 String splash = '/splash';
 
 String dashboard = '/dashboard';
+
+String tabview = '/tabviews';

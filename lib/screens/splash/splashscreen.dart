@@ -13,7 +13,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 5), () {
       Get.toNamed(dashboard);
     });
   }
@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        color: const Color(0xff001F3F),
+        color: Color.fromRGBO(228, 226, 221, 1),
         child: Center(
           child: Image.asset('assets/logo/DT_logo.png'),
         ),
