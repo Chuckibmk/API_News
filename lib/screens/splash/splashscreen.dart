@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
         width: double.infinity,
         color: Color.fromRGBO(228, 226, 221, 1),
         child: Center(
-          child: Image.asset('assets/logo/DT_logo.png'),
+          child: Image.asset('assets/logo/DT_Logo.png'),
         ),
       ),
     );

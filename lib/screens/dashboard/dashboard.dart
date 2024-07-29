@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 // import 'package:api_news/routes/app/app-route.dart';
 
 import 'package:api_news/screens/dashboard/tabviews.dart';
+import 'package:api_news/screens/dashboard/viewpost.dart';
+import 'package:get/route_manager.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -66,7 +68,7 @@ class _DashboardState extends State<Dashboard>
                   horizontal: 15,
                   vertical: 20,
                 ),
-                color: Colors.white,
+                // color: Colors.white,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -107,7 +109,11 @@ class _DashboardState extends State<Dashboard>
                       ),
                       child: IconButton(
                         icon: const Icon(Icons.notifications),
-                        onPressed: () {},
+                        onPressed: () {
+                          var route = MaterialPageRoute(
+                              builder: (context) => ViewPost());
+                          Navigator.push(context, route);
+                        },
                         color: Colors.blue,
                       ),
                     ),
