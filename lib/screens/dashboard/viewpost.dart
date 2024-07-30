@@ -61,49 +61,42 @@ class _ViewPostState extends State<ViewPost> {
         child: SafeArea(
           child: Column(
             children: [
-              Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 15,
-                  vertical: 20,
-                ),
-                // color: Colors.white,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      child: IconButton(
-                        icon: const Icon(Icons.arrow_back),
-                        onPressed: () {
-                          var route = MaterialPageRoute(
-                              builder: (context) => const Dashboard());
-                          Navigator.push(context, route);
-                        },
-                        tooltip:
-                            MaterialLocalizations.of(context).backButtonTooltip,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    child: IconButton(
+                      icon: const Icon(Icons.arrow_back),
+                      onPressed: () {
+                        var route = MaterialPageRoute(
+                            builder: (context) => const Dashboard());
+                        Navigator.push(context, route);
+                      },
+                      tooltip:
+                          MaterialLocalizations.of(context).backButtonTooltip,
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(10),
+                        child: IconButton(
+                          icon: const Icon(Icons.bookmark_border),
+                          onPressed: () {},
+                        ),
                       ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.all(10),
-                          child: IconButton(
-                            icon: const Icon(Icons.bookmark_border),
-                            onPressed: () {},
-                          ),
+                      Container(
+                        padding: const EdgeInsets.all(10),
+                        child: IconButton(
+                          icon: const Icon(Icons.file_upload_outlined),
+                          onPressed: () {},
                         ),
-                        Container(
-                          padding: const EdgeInsets.all(10),
-                          child: IconButton(
-                            icon: const Icon(Icons.file_upload_outlined),
-                            onPressed: () {},
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
               Column(
                 children: [

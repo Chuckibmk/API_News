@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 // import 'package:get/route_manager.dart';
 // import 'package:api_news/routes/app/app-route-names.dart';
 // import 'package:api_news/routes/app/app-route.dart';
-import 'package:api_news/screens/dashboard/viewpost.dart';
 import 'package:api_news/screens/dashboard/home.dart';
+import 'package:api_news/screens/search/search.dart';
 // import 'package:get/route_manager.dart';
 
 class Dashboard extends StatefulWidget {
@@ -16,7 +16,6 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard>
     with SingleTickerProviderStateMixin {
   //scaffold variable for drawer control, stores the state of the drawer
-  var scaffoldkey = GlobalKey<ScaffoldState>();
 
   final _controller = PageController();
   int currentIndex = 0;
@@ -34,7 +33,6 @@ class _DashboardState extends State<Dashboard>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: scaffoldkey,
       drawer: const Drawer(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
@@ -55,65 +53,12 @@ class _DashboardState extends State<Dashboard>
       body: SafeArea(
         child: Column(
           children: [
-            Container(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 15,
-                vertical: 20,
-              ),
-              // color: Colors.white,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(10),
-                    child: Builder(
-                      builder: (context) => IconButton(
-                        icon: const Icon(Icons.menu),
-                        onPressed: () {
-                          // use of scaffold variable store state after openEndDrawer
-                          scaffoldkey.currentState?.openDrawer();
-                        },
-                        tooltip: MaterialLocalizations.of(context)
-                            .openAppDrawerTooltip,
-                      ),
-                    ),
-                  ),
-                  RichText(
-                    textAlign: TextAlign.left,
-                    text: TextSpan(
-                      text: 'Hi Robert',
-                      style: TextStyle(
-                          color: Theme.of(context).colorScheme.onSurface,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.surface,
-                      // color: Color(0xffF8FAFB),
-                      shape: BoxShape.circle,
-                    ),
-                    child: IconButton(
-                      icon: const Icon(Icons.notifications),
-                      onPressed: () {
-                        var route =
-                            MaterialPageRoute(builder: (context) => ViewPost());
-                        Navigator.push(context, route);
-                      },
-                      color: Colors.blue,
-                    ),
-                  ),
-                ],
-              ),
-            ),
             Expanded(
               child: PageView(
                 controller: _controller,
                 children: const [
                   Home(),
-                  Placeholder(),
+                  Search(),
                   Placeholder(),
                   Placeholder(),
                   Placeholder(),

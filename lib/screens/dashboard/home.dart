@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:api_news/screens/dashboard/tabviews.dart';
+import 'package:api_news/screens/dashboard/viewpost.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -10,6 +11,8 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   late TabController _tabController;
+
+  var scaffoldkey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -29,8 +32,55 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldkey,
       body: Column(
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(10),
+                child: Builder(
+                  builder: (context) => IconButton(
+                    icon: const Icon(Icons.menu),
+                    onPressed: () {
+                      // use of scaffold variable store state after openEndDrawer
+                      scaffoldkey.currentState?.openDrawer();
+                    },
+                    tooltip:
+                        MaterialLocalizations.of(context).openAppDrawerTooltip,
+                  ),
+                ),
+              ),
+              RichText(
+                textAlign: TextAlign.left,
+                text: TextSpan(
+                  text: 'Hi Robert',
+                  style: TextStyle(
+                      color: Theme.of(context).colorScheme.onSurface,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.surface,
+                  // color: Color(0xffF8FAFB),
+                  shape: BoxShape.circle,
+                ),
+                child: IconButton(
+                  icon: const Icon(Icons.notifications),
+                  onPressed: () {
+                    var route =
+                        MaterialPageRoute(builder: (context) => ViewPost());
+                    Navigator.push(context, route);
+                  },
+                  color: Colors.blue,
+                ),
+              ),
+            ],
+          ),
           TabBar(
             isScrollable: true,
             controller: _tabController,
