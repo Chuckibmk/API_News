@@ -33,23 +33,6 @@ class _DashboardState extends State<Dashboard>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const Drawer(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.zero,
-            bottomLeft: Radius.zero,
-          ),
-        ),
-        child: Column(
-          // padding: EdgeInsets.zero,
-          children: [
-            // flexible container with child of History answer widget
-            Flexible(
-              child: Placeholder(),
-            ),
-          ],
-        ),
-      ),
       body: SafeArea(
         child: Column(
           children: [
