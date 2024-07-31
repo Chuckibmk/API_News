@@ -86,8 +86,8 @@ class _SearchState extends State<Search> {
                 ],
               ),
               const Divider(
-                height: 10,
-                thickness: 1,
+                height: 5,
+                thickness: 0.5,
                 color: Colors.black,
               ),
               Column(
@@ -122,12 +122,84 @@ class _SearchState extends State<Search> {
                     ),
                   ),
                   Container(
-                    height: 70,
+                    // height: 70,
                     margin: const EdgeInsets.symmetric(
                         horizontal: 20, vertical: 10),
-                    child: const Placeholder(),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width,
+                          height: 150,
+                          child: ClipRRect(
+                            borderRadius: const BorderRadius.vertical(
+                              top: Radius.circular(10),
+                              bottom: Radius.circular(10),
+                            ),
+                            child: Image.asset(
+                              'assets/logo/DT_Logo.png',
+                              fit: BoxFit.fill,
+                              // alignment: Alignment.centerLeft,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.symmetric(vertical: 7),
+                          width: MediaQuery.of(context).size.width,
+                          child: RichText(
+                            textAlign: TextAlign.left,
+                            text: TextSpan(
+                              text:
+                                  'Climate change Artic warning linked to colder winters',
+                              style: TextStyle(
+                                  color:
+                                      Theme.of(context).colorScheme.onSurface,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            RichText(
+                              text: TextSpan(
+                                text: 'BBC News',
+                                style: TextStyle(
+                                  color: Theme.of(context).colorScheme.primary,
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 30,
+                              child: Icon(
+                                Icons.fiber_manual_record,
+                                size: 10,
+                              ),
+                            ),
+                            RichText(
+                              text: TextSpan(
+                                text: '4hrs ago',
+                                style: TextStyle(
+                                  color:
+                                      Theme.of(context).colorScheme.onSurface,
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ],
+              ),
+              const Divider(
+                height: 5,
+                thickness: 0.5,
+                color: Colors.black,
               ),
               Column(
                 children: [
@@ -161,10 +233,96 @@ class _SearchState extends State<Search> {
                     ),
                   ),
                   Container(
-                    height: 70,
+                    // height: 70,
                     margin: const EdgeInsets.symmetric(
                         horizontal: 20, vertical: 10),
-                    child: const Placeholder(),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          children: [
+                            Container(
+                              width: MediaQuery.of(context).size.width / 2,
+                              child: Column(
+                                children: [
+                                  RichText(
+                                    textAlign: TextAlign.start,
+                                    text: TextSpan(
+                                      text:
+                                          'US jobs growth disappoints as recovery falters',
+                                      style: TextStyle(
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .onSurface,
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                  Container(
+                                    margin: const EdgeInsets.symmetric(
+                                        vertical: 10),
+                                    child: Row(
+                                      children: [
+                                        RichText(
+                                          textAlign: TextAlign.start,
+                                          text: TextSpan(
+                                            text: 'BBC News',
+                                            style: TextStyle(
+                                              color: Theme.of(context)
+                                                  .colorScheme
+                                                  .primary,
+                                              fontSize: 10,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          width: 30,
+                                          child: Icon(
+                                            Icons.fiber_manual_record,
+                                            size: 10,
+                                          ),
+                                        ),
+                                        RichText(
+                                          text: TextSpan(
+                                            text: '4hrs ago',
+                                            style: TextStyle(
+                                              color: Theme.of(context)
+                                                  .colorScheme
+                                                  .onSurface,
+                                              fontSize: 10,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width / 3,
+                              // height: MediaQuery.of(context).size.aspectRatio,
+                              child: ClipRRect(
+                                borderRadius: const BorderRadius.vertical(
+                                  top: Radius.circular(15),
+                                  bottom: Radius.circular(15),
+                                ),
+                                child: Image.asset(
+                                  'assets/logo/DT_Logo.png',
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
