@@ -1,3 +1,5 @@
+import 'package:api_news/screens/account/signin.dart';
+import 'package:api_news/screens/account/signup.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -11,6 +13,13 @@ class Search extends StatefulWidget {
 
 class _SearchState extends State<Search> {
   final srchctrl = TextEditingController();
+
+  @override
+  void dispose() {
+    srchctrl.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -178,14 +187,21 @@ class _SearchState extends State<Search> {
                                 size: 10,
                               ),
                             ),
-                            RichText(
-                              text: TextSpan(
-                                text: '4hrs ago',
-                                style: TextStyle(
-                                  color:
-                                      Theme.of(context).colorScheme.onSurface,
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.bold,
+                            GestureDetector(
+                              onTap: () {
+                                var route = MaterialPageRoute(
+                                    builder: (context) => SignUp());
+                                Navigator.push(context, route);
+                              },
+                              child: RichText(
+                                text: TextSpan(
+                                  text: '4hrs ago',
+                                  style: TextStyle(
+                                    color:
+                                        Theme.of(context).colorScheme.onSurface,
+                                    fontSize: 10,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),
@@ -219,13 +235,20 @@ class _SearchState extends State<Search> {
                             ),
                           ),
                         ),
-                        RichText(
-                          text: TextSpan(
-                            text: 'View All',
-                            style: TextStyle(
-                              color: Theme.of(context).colorScheme.primary,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w900,
+                        GestureDetector(
+                          onTap: () {
+                            var route = MaterialPageRoute(
+                                builder: (context) => SignIn());
+                            Navigator.push(context, route);
+                          },
+                          child: RichText(
+                            text: TextSpan(
+                              text: 'View All',
+                              style: TextStyle(
+                                color: Theme.of(context).colorScheme.primary,
+                                fontSize: 15,
+                                fontWeight: FontWeight.w900,
+                              ),
                             ),
                           ),
                         ),
