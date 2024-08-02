@@ -1,7 +1,7 @@
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/widgets.dart';
+// import 'package:flutter/widgets.dart';
 
 class DashTabs extends StatefulWidget {
   const DashTabs({super.key});
@@ -40,6 +40,7 @@ class _DashTabsState extends State<DashTabs> {
                   autoPlayAnimationDuration: const Duration(milliseconds: 800),
                   autoPlayCurve: Curves.ease,
                   enlargeCenterPage: true,
+                  // ignore: non_constant_identifier_names
                   onPageChanged: (i, CarouselPageChangedReason) {},
                   scrollDirection: Axis.horizontal,
                 ),

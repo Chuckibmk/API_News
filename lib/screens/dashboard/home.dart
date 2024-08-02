@@ -170,8 +170,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 child: IconButton(
                   icon: const Icon(Icons.notifications),
                   onPressed: () {
-                    var route =
-                        MaterialPageRoute(builder: (context) => ViewPost());
+                    var route = MaterialPageRoute(
+                        builder: (context) => const ViewPost());
                     Navigator.push(context, route);
                   },
                   color: Colors.blue,
@@ -182,7 +182,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
           TabBar(
             isScrollable: true,
             controller: _tabController,
-            tabs: [
+            tabs: const [
               Tab(text: 'Trending'),
               Tab(text: 'My Topics'),
               Tab(text: 'Politics'),
@@ -192,7 +192,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             flex: 1,
             child: TabBarView(
               controller: _tabController,
-              children: [
+              children: const [
                 DashTabs(),
                 Placeholder(),
                 Placeholder(),

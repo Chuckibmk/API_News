@@ -1,8 +1,9 @@
 import 'package:api_news/screens/account/signin.dart';
 import 'package:api_news/screens/account/signup.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+// import 'package:flutter/widgets.dart';
 
 class Search extends StatefulWidget {
   const Search({super.key});
@@ -190,7 +191,7 @@ class _SearchState extends State<Search> {
                             GestureDetector(
                               onTap: () {
                                 var route = MaterialPageRoute(
-                                    builder: (context) => SignUp());
+                                    builder: (context) => const SignUp());
                                 Navigator.push(context, route);
                               },
                               child: RichText(
@@ -238,7 +239,7 @@ class _SearchState extends State<Search> {
                         GestureDetector(
                           onTap: () {
                             var route = MaterialPageRoute(
-                                builder: (context) => SignIn());
+                                builder: (context) => const SignIn());
                             Navigator.push(context, route);
                           },
                           child: RichText(
