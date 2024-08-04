@@ -1,5 +1,6 @@
 import 'package:api_news/screens/account/signin.dart';
 import 'package:api_news/screens/account/signup.dart';
+import 'package:api_news/screens/account/verify.dart';
 // import 'package:flutter/gestures.dart';
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -74,13 +75,20 @@ class _SearchState extends State<Search> {
                             ),
                           ),
                         ),
-                        RichText(
-                          text: TextSpan(
-                            text: 'View All',
-                            style: TextStyle(
-                              color: Theme.of(context).colorScheme.primary,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w900,
+                        GestureDetector(
+                          onTap: () {
+                            var route = MaterialPageRoute(
+                                builder: (context) => const VerifyOTP());
+                            Navigator.push(context, route);
+                          },
+                          child: RichText(
+                            text: TextSpan(
+                              text: 'View All',
+                              style: TextStyle(
+                                color: Theme.of(context).colorScheme.primary,
+                                fontSize: 15,
+                                fontWeight: FontWeight.w900,
+                              ),
                             ),
                           ),
                         ),
@@ -118,13 +126,20 @@ class _SearchState extends State<Search> {
                             ),
                           ),
                         ),
-                        RichText(
-                          text: TextSpan(
-                            text: 'View All',
-                            style: TextStyle(
-                              color: Theme.of(context).colorScheme.primary,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w900,
+                        GestureDetector(
+                          onTap: () {
+                            var route = MaterialPageRoute(
+                                builder: (context) => const SignUp());
+                            Navigator.push(context, route);
+                          },
+                          child: RichText(
+                            text: TextSpan(
+                              text: 'View All',
+                              style: TextStyle(
+                                color: Theme.of(context).colorScheme.primary,
+                                fontSize: 15,
+                                fontWeight: FontWeight.w900,
+                              ),
                             ),
                           ),
                         ),
@@ -188,21 +203,14 @@ class _SearchState extends State<Search> {
                                 size: 10,
                               ),
                             ),
-                            GestureDetector(
-                              onTap: () {
-                                var route = MaterialPageRoute(
-                                    builder: (context) => const SignUp());
-                                Navigator.push(context, route);
-                              },
-                              child: RichText(
-                                text: TextSpan(
-                                  text: '4hrs ago',
-                                  style: TextStyle(
-                                    color:
-                                        Theme.of(context).colorScheme.onSurface,
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                            RichText(
+                              text: TextSpan(
+                                text: '4hrs ago',
+                                style: TextStyle(
+                                  color:
+                                      Theme.of(context).colorScheme.onSurface,
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
                             ),

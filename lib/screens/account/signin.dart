@@ -1,4 +1,9 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 // import 'package:flutter/widgets.dart';
 
 class SignIn extends StatefulWidget {
@@ -10,13 +15,11 @@ class SignIn extends StatefulWidget {
 
 class _SignInState extends State<SignIn> {
   final TextEditingController unctrl = TextEditingController();
-  final TextEditingController ectrl = TextEditingController();
   final TextEditingController pwctrl = TextEditingController();
 
   @override
   void dispose() {
     unctrl.dispose();
-    ectrl.dispose();
     pwctrl.dispose();
     super.dispose();
   }
@@ -31,8 +34,7 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     Map<String, TextEditingController> fom = {
-      'Username': unctrl,
-      'Email': ectrl,
+      'Username or Email': unctrl,
       'Password': pwctrl
     };
     return Scaffold(
@@ -56,58 +58,94 @@ class _SignInState extends State<SignIn> {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 10,
-            ),
             Form(
               child: Column(
                 children: [
                   for (var a in fom.keys)
-                    Container(
-                      margin: const EdgeInsets.symmetric(vertical: 10),
-                      width: MediaQuery.of(context).size.width,
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          // contentPadding: const EdgeInsets.all(10),
-                          hintText: a,
+                    Column(
+                      children: [
+                        const SizedBox(
+                          height: 5,
                         ),
-                        controller: fom[a],
-                        maxLines: 1,
-                        style: const TextStyle(
-                          fontSize: 15,
+                        Container(
+                          margin: const EdgeInsets.symmetric(vertical: 10),
+                          width: MediaQuery.of(context).size.width,
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                              // contentPadding: const EdgeInsets.all(10),
+                              labelText: a,
+                            ),
+                            controller: fom[a],
+                            maxLines: 1,
+                            style: const TextStyle(
+                              fontSize: 15,
+                            ),
+                          ),
                         ),
-                      ),
+                      ],
                     ),
                 ],
               ),
             ),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  'Forgot Password',
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
             const SizedBox(
-              height: 10,
+              height: 5,
             ),
             Center(
               child: ElevatedButton(
-                  onPressed: () {}, child: const Text('Sign In')),
+                onPressed: () {},
+                style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                        side: BorderSide(
+                            color: Theme.of(context).colorScheme.onSurface),
+                      ),
+                    ),
+                    backgroundColor: MaterialStateProperty.all(Colors.blue)),
+                child: const Text(
+                  'Sign In',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
             ),
             const SizedBox(
-              height: 10,
+              height: 5,
             ),
             Container(
               margin: const EdgeInsets.symmetric(vertical: 20),
               child: const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   // Container(
                   //   margin: const EdgeInsets.symmetric(horizontal: 15),
-                  //   child: Divider(
+                  //   child: const Divider(
                   //     indent: 20,
                   //     endIndent: 0,
                   //     height: 1,
-                  //     thickness: 1,
+                  //     thickness: 5,
                   //     color: Colors.black54,
                   //   ),
                   // ),
-                  Text(
-                    'or Sign in with',
+                  Center(
+                    child: Text(
+                      'or Sign in with',
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
                   // Divider(
                   //   // indent: 57,
@@ -129,24 +167,37 @@ class _SignInState extends State<SignIn> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5.0),
                       ),
-                      child: Icon(x),
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        child: Icon(x),
+                      ),
                     ),
                 ],
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 5,
             ),
             Container(
               margin: const EdgeInsets.symmetric(vertical: 20),
-              child: const Center(
-                child: Text(
-                  'By signing up to Daily Trends, you are accepting our Terms & Conditions',
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontStyle: FontStyle.normal,
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Don't have an account?",
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontStyle: FontStyle.normal,
+                    ),
                   ),
-                ),
+                  Text(
+                    " Register",
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
