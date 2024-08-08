@@ -1,3 +1,4 @@
+import 'package:api_news/screens/account/profile.dart';
 import 'package:api_news/screens/dashboard/post.dart';
 import 'package:flutter/material.dart';
 // import 'package:get/route_manager.dart';
@@ -45,7 +46,7 @@ class _DashboardState extends State<Dashboard>
                   Search(),
                   Post(),
                   Placeholder(),
-                  Placeholder(),
+                  Profile(),
                 ],
                 onPageChanged: (index) {
                   currentIndex = index;
