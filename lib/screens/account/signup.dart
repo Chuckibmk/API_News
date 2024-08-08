@@ -48,7 +48,7 @@ class _SignUpState extends State<SignUp> {
           children: [
             SizedBox(
               width: MediaQuery.of(context).size.width,
-              height: 200,
+              height: 70,
               child: ClipRRect(
                 borderRadius: const BorderRadius.vertical(
                   top: Radius.circular(10),
@@ -66,9 +66,6 @@ class _SignUpState extends State<SignUp> {
                   for (var a in fom.keys)
                     Column(
                       children: [
-                        const SizedBox(
-                          height: 5,
-                        ),
                         Container(
                           margin: const EdgeInsets.symmetric(vertical: 10),
                           width: MediaQuery.of(context).size.width,
