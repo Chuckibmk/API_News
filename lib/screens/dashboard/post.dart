@@ -22,6 +22,7 @@ class _PostState extends State<Post> {
     hdctrl.dispose();
     tgctrl.dispose();
     ctctrl.dispose();
+    _cont.dispose();
     super.dispose();
   }
 
@@ -114,12 +115,63 @@ class _PostState extends State<Post> {
                             ),
                           ],
                         ),
-                      QuillSimpleToolbar(
-                          configurations: QuillSimpleToolbarConfigurations(
-                              controller: _cont)),
-                      QuillEditor.basic(
-                          configurations:
-                              QuillEditorConfigurations(controller: _cont))
+                      Card(
+                        margin: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 10),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: Column(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.symmetric(vertical: 5),
+                              child: QuillSimpleToolbar(
+                                configurations:
+                                    QuillSimpleToolbarConfigurations(
+                                  controller: _cont,
+                                  multiRowsDisplay: false,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              height: 50,
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 5),
+                              child: SizedBox(
+                                child: QuillEditor.basic(
+                                  configurations: QuillEditorConfigurations(
+                                      controller: _cont,
+                                      showCursor: true,
+                                      maxHeight: 100,
+                                      placeholder: 'Write Article'),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      Center(
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ButtonStyle(
+                              shape: MaterialStateProperty.all<
+                                  RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  side: BorderSide(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onSurface),
+                                ),
+                              ),
+                              backgroundColor:
+                                  MaterialStateProperty.all(Colors.blue)),
+                          child: const Text(
+                            'Post',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
