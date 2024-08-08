@@ -25,8 +25,31 @@ class _ProfileState extends State<Profile> {
     });
   }
 
+  final TextEditingController usctrl = TextEditingController();
+  final TextEditingController fnctrl = TextEditingController();
+  final TextEditingController ltctrl = TextEditingController();
+  final TextEditingController emctrl = TextEditingController();
+  final TextEditingController pwctrl = TextEditingController();
+
+  @override
+  void dispose() {
+    usctrl.dispose();
+    fnctrl.dispose();
+    ltctrl.dispose();
+    emctrl.dispose();
+    pwctrl.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
+    Map<String, TextEditingController> fom = {
+      'Username': usctrl,
+      'Firstname': fnctrl,
+      'Lastname': ltctrl,
+      'Email': emctrl,
+      'Password': pwctrl
+    };
     return SingleChildScrollView(
       child: SafeArea(
         child: Column(
@@ -59,14 +82,67 @@ class _ProfileState extends State<Profile> {
                           backgroundImage: FileImage(_image!),
                         )
                       : CircleAvatar(
+                          // backgroundImage: AssetImage,
                           child: IconButton(
                             onPressed: () {
                               pickImage();
                             },
-                            icon: Icon(Icons.camera),
+                            icon: Icon(Icons.person),
                           ),
                         ),
-                )
+                ),
+                Form(
+                  child: Column(
+                    children: [
+                      for (var a in fom.keys)
+                        Column(
+                          children: [
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Container(
+                              margin: const EdgeInsets.symmetric(
+                                  vertical: 10, horizontal: 20),
+                              width: MediaQuery.of(context).size.width,
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                  // contentPadding: const EdgeInsets.all(10),
+                                  labelText: a,
+                                ),
+                                controller: fom[a],
+                                maxLines: 1,
+                                style: const TextStyle(
+                                  fontSize: 15,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      Center(
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ButtonStyle(
+                              shape: MaterialStateProperty.all<
+                                  RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  side: BorderSide(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onSurface),
+                                ),
+                              ),
+                              backgroundColor:
+                                  MaterialStateProperty.all(Colors.blue)),
+                          child: const Text(
+                            'Post',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ],
