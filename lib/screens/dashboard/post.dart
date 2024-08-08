@@ -117,10 +117,9 @@ class _PostState extends State<Post> {
                       QuillSimpleToolbar(
                           configurations: QuillSimpleToolbarConfigurations(
                               controller: _cont)),
-                      Expanded(
-                          child: QuillEditor.basic(
-                              configurations:
-                                  QuillEditorConfigurations(controller: _cont)))
+                      QuillEditor.basic(
+                          configurations:
+                              QuillEditorConfigurations(controller: _cont))
                     ],
                   ),
                 ),
