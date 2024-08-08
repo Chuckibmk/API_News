@@ -1,9 +1,10 @@
-import 'dart:ui';
+// import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_social_button/flutter_social_button.dart';
+// import 'package:flutter/painting.dart';
+// import 'package:flutter/rendering.dart';
+// import 'package:flutter/widgets.dart';
 // import 'package:flutter/widgets.dart';
 
 class SignIn extends StatefulWidget {
@@ -24,11 +25,11 @@ class _SignInState extends State<SignIn> {
     super.dispose();
   }
 
-  List<IconData> icn = [
-    Icons.mail_outline,
-    Icons.mail_outline,
-    Icons.mail_outline,
-    Icons.mail_outline,
+  List<ButtonType> btn = [
+    ButtonType.email,
+    ButtonType.google,
+    ButtonType.facebook,
+    ButtonType.twitter,
   ];
 
   @override
@@ -159,17 +160,14 @@ class _SignInState extends State<SignIn> {
             Container(
               margin: const EdgeInsets.symmetric(vertical: 20),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  for (var x in icn)
-                    Card(
-                      borderOnForeground: true,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                      ),
-                      child: Container(
-                        padding: const EdgeInsets.all(10),
-                        child: Icon(x),
+                  for (var x in btn)
+                    SizedBox(
+                      child: FlutterSocialButton(
+                        onTap: () {},
+                        mini: true,
+                        buttonType: x,
                       ),
                     ),
                 ],

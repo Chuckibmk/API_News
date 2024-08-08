@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_social_button/flutter_social_button.dart';
 // import 'package:flutter/widgets.dart';
 
 class SignUp extends StatefulWidget {
@@ -23,11 +24,11 @@ class _SignUpState extends State<SignUp> {
     super.dispose();
   }
 
-  List<IconData> icn = [
-    Icons.mail_outline,
-    Icons.mail_outline,
-    Icons.mail_outline,
-    Icons.mail_outline,
+  List<ButtonType> btn = [
+    ButtonType.email,
+    ButtonType.google,
+    ButtonType.facebook,
+    ButtonType.twitter,
   ];
 
   @override
@@ -151,14 +152,13 @@ class _SignUpState extends State<SignUp> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  for (var x in icn)
-                    Card(
-                      borderOnForeground: true,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0),
+                  for (var x in btn)
+                    SizedBox(
+                      child: FlutterSocialButton(
+                        onTap: () {},
+                        mini: true,
+                        buttonType: x,
                       ),
-                      child: Container(
-                          padding: const EdgeInsets.all(10), child: Icon(x)),
                     ),
                 ],
               ),
