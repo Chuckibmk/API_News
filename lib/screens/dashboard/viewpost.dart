@@ -42,8 +42,8 @@ class _ViewPostState extends State<ViewPost> {
 
   @override
   void dispose() {
-    scrollcont.dispose();
-    scrollcont.addListener(_scrollListener);
+    // scrollcont.dispose();
+    // scrollcont.addListener(_scrollListener);
     super.dispose();
   }
 

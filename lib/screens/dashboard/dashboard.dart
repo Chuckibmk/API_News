@@ -1,3 +1,4 @@
+import 'package:api_news/screens/dashboard/post.dart';
 import 'package:flutter/material.dart';
 // import 'package:get/route_manager.dart';
 // import 'package:api_news/routes/app/app-route-names.dart';
@@ -42,7 +43,7 @@ class _DashboardState extends State<Dashboard>
                 children: const [
                   Home(),
                   Search(),
-                  Placeholder(),
+                  Post(),
                   Placeholder(),
                   Placeholder(),
                 ],
