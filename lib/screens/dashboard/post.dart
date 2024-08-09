@@ -39,7 +39,7 @@ class _PostState extends State<Post> {
     });
   }
 
-  QuillController _cont = QuillController.basic();
+  final _cont = QuillController.basic();
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +84,7 @@ class _PostState extends State<Post> {
                             onPressed: () {
                               pickImage();
                             },
-                            icon: Icon(Icons.camera),
+                            icon: const Icon(Icons.camera),
                           ),
                         ),
                 ),

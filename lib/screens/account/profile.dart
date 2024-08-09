@@ -87,7 +87,7 @@ class _ProfileState extends State<Profile> {
                             onPressed: () {
                               pickImage();
                             },
-                            icon: Icon(Icons.person),
+                            icon: const Icon(Icons.person),
                           ),
                         ),
                 ),
