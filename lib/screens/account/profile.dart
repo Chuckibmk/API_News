@@ -118,28 +118,28 @@ class _ProfileState extends State<Profile> {
                             ),
                           ],
                         ),
-                      Center(
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ButtonStyle(
-                              shape: MaterialStateProperty.all<
-                                  RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  side: BorderSide(
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .onSurface),
-                                ),
-                              ),
-                              backgroundColor:
-                                  MaterialStateProperty.all(Colors.blue)),
-                          child: const Text(
-                            'Post',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ),
-                      ),
+                      // Center(
+                      //   child: ElevatedButton(
+                      //     onPressed: () {},
+                      //     style: ButtonStyle(
+                      //         shape: MaterialStateProperty.all<
+                      //             RoundedRectangleBorder>(
+                      //           RoundedRectangleBorder(
+                      //             borderRadius: BorderRadius.circular(10.0),
+                      //             side: BorderSide(
+                      //                 color: Theme.of(context)
+                      //                     .colorScheme
+                      //                     .onSurface),
+                      //           ),
+                      //         ),
+                      //         backgroundColor:
+                      //             MaterialStateProperty.all(Colors.blue)),
+                      //     child: const Text(
+                      //       'Post',
+                      //       style: TextStyle(color: Colors.white),
+                      //     ),
+                      //   ),
+                      // ),
                     ],
                   ),
                 ),
